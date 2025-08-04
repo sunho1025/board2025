@@ -17,7 +17,7 @@ public class Sample {
         return id;
     }
 
-    public void setId(Long Id){
+    public void setId(Long id){
         this.id = id;
     }
 
@@ -25,7 +25,7 @@ public class Sample {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String title){
+        this.title=title;
     }
 }
