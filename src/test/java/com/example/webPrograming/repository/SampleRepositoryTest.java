@@ -1,6 +1,7 @@
 package com.example.webPrograming.repository;
 
 import com.example.webPrograming.domain.Sample;
+import com.example.webPrograming.service.SampleService;
 import org.apache.ibatis.session.RowBounds;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class SampleRepositoryTest {
     @Autowired
     SampleMapper sampleMapper;
 
+    @Autowired
+    SampleService sampleService;
     @Test
     void findALLByTitle(){
         Map<String, Object> filter = new HashMap<>();
@@ -63,6 +66,30 @@ public class SampleRepositoryTest {
         for(Sample sample: samples){
             System.out.println(sample.getTitle());
         }
+    }
+    @Test
+    void testNoCache1(){
+        System.out.println("testNoCache1 Start");
+        String ret=sampleService.testNoCache(3L);
+        System.out.println("testNoCache1 End, " + ret);
+    }
+    @Test
+    void testNoCache2(){
+        System.out.println("testNoCache2 Start");
+        String ret=sampleService.testNoCache(3L);
+        System.out.println("testNoCache2 End, " + ret);
+    }
+    @Test
+    void testCache1(){
+        System.out.println("testCache1 Start");
+        String ret=sampleService.testCache(3L);
+        System.out.println("testCache1 End, " + ret);
+    }
+    @Test
+    void testCache2(){
+        System.out.println("testCache2 Start");
+        String ret=sampleService.testCache(3L);
+        System.out.println("testCache2 End, " + ret);
     }
 
 }

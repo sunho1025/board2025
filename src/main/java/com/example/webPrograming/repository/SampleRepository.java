@@ -3,6 +3,7 @@ package com.example.webPrograming.repository;
 import com.example.webPrograming.domain.Sample;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
