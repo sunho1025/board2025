@@ -7,4 +7,5 @@ public interface SampleService {
     String testCache(Long id);
     void testCacheClear(Long id);
 
+    Sample selectOne(Long id);
 }

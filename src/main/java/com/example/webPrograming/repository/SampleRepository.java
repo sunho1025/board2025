@@ -10,4 +10,5 @@ import java.util.List;
 public interface SampleRepository extends JpaRepository<Sample, Long>, JpaSpecificationExecutor<Sample> {
     List<Sample> findByTitle(String title);
     List<Sample> findByTitleLike(String title);
+
 }
